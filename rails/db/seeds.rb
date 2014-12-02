@@ -6,6 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Contact.create(name: "Bugs Bunny")
-Contact.create(name: "Wile E. Coyote")
-Contact.create(name: "Yosemite Sam")
+bugs = Contact.create(name: "Bugs Bunny")
+wile = Contact.create(name: "Wile E. Coyote")
+yosemite = Contact.create(name: "Yosemite Sam")
+
+bugs.phone_numbers.create(number: "123-432-5432")
+bugs.phone_numbers.create(number: "342-457-9985")
+
+wile.phone_numbers.create(number: "543-544-2233")
+
+yosemite.phone_numbers.create(number: "111-222-2233")
+yosemite.phone_numbers.create(number: "666-444-3434")
+yosemite.phone_numbers.create(number: "498-238-1143")

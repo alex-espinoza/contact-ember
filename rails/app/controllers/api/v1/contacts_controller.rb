@@ -1,4 +1,4 @@
-class Api::V1::SpeakersController < ApplicationController
+class Api::V1::ContactsController < ApplicationController
   def index
     render json: Contact.all
   end
