@@ -10,6 +10,8 @@ Router.map(function() {
   this.resource('contacts', function() {
     this.route('show', {path: ':contact_id'});
   });
+
+  this.route('todos');
 });
 
 export default Router;
