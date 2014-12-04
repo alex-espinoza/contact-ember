@@ -18,3 +18,7 @@ wile.phone_numbers.create(number: "543-544-2233")
 yosemite.phone_numbers.create(number: "111-222-2233")
 yosemite.phone_numbers.create(number: "666-444-3434")
 yosemite.phone_numbers.create(number: "498-238-1143")
+
+Todo.create(title: "install ember-cli")
+Todo.create(title: "install additional dependencies")
+Todo.create(title: "develop amazing things")
