@@ -11,7 +11,9 @@ Router.map(function() {
     this.route('show', {path: ':contact_id'});
   });
 
-  this.route('todos');
+  this.resource('todos', function() {
+    this.route('new');
+  });
 });
 
 export default Router;
