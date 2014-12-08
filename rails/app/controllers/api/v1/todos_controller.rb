@@ -11,8 +11,15 @@ class Api::V1::TodosController < ApplicationController
     @todo = Todo.new(todo_params)
 
     if @todo.valid? && @todo.save
-      @todo.save
       render json: @todo, status: 201
+    end
+  end
+
+  def update
+    @todo = Todo.find(params[:id])
+
+    if @todo.update_attributes(todo_params)
+      render json: @todo, status: 200
     end
   end
 
