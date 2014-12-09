@@ -11,8 +11,8 @@ Router.map(function() {
     this.route('show', {path: ':contact_id'});
   });
 
-  this.resource('todos', function() {
-    this.route('new');
+  this.resource('todos', {path: '/'},function() {
+    // additional child rotues will go here later
   });
 });
 
