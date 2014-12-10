@@ -12,6 +12,8 @@ class Api::V1::TodosController < ApplicationController
 
     if @todo.valid? && @todo.save
       render json: @todo, status: 201
+    else
+      render json: @todo.errors, status: 400
     end
   end
 
@@ -20,15 +22,15 @@ class Api::V1::TodosController < ApplicationController
 
     if @todo.update_attributes(todo_params)
       render json: @todo, status: 200
+    else
+      render json: @todo.errors, status: 400
     end
   end
 
   def destroy
     @todo = Todo.find(params[:id])
-
-    if @todo
-      @todo.destroy
-      head :no_content
+    @todo.destroy
+    head :no_content
     end
   end
 
