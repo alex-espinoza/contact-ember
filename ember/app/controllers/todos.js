@@ -18,6 +18,18 @@ export default Ember.ArrayController.extend({
     return this.filterBy('isCompleted', true).get('length');
   }.property('@each.isCompleted'),
 
+  allAreDone: function(key, value) {
+    if (value === undefined) {
+      // This is where checkbox checks to see if all todos are complete to mark itself as checked or not
+      return !!this.get('length') && this.isEvery('isCompleted', true);
+    } else {
+      // Will filter and only update todos that have the opposite value of when checkbox is marked
+      var todos = this.filterBy('isCompleted', !value);
+      todos.setEach('isCompleted', value);
+      todos.invoke('save');
+    }
+  }.property('@each.isCompleted'),
+
   actions: {
     createTodo: function() {
       // Get the todo title set by the "New Todo" text field
