@@ -31,7 +31,6 @@ class Api::V1::TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     @todo.destroy
     head :no_content
-    end
   end
 
   private
